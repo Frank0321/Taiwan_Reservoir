@@ -22,3 +22,5 @@
 
 ### 參考資料
 - [blairlee227](https://github.com/blairlee227/taiwan-reservoir)
+- [TaiwanReservoirAPI](https://github.com/chihsuan/TaiwanReservoirAPI)
+- [reservoir-visual](https://github.com/chihsuan/reservoir-visual)
