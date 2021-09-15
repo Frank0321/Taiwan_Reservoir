@@ -14,6 +14,11 @@ const routes = [
     path: '/hello',
     name: 'Hello',
     component: Hello
+  },
+  {
+    path: '/reservoirInfo',
+    name: 'ReservoirInfo',
+    component: () => import('../components/reservoirInfo.vue')
   }
 ]
 

@@ -20,7 +20,14 @@
    - https://www.taiwanstat.com/waters/latest
    - 如果要歷史數據 : https://fhy.wra.gov.tw/ReservoirPage_2011/StorageCapacity.aspx
 
+### 層級關係
+- 用 chart(水滴)，組成一個與reservoirInfo(水庫資訊)組合成一個components
+  - reservoirInfo(父) <-> chart(子)
+
+
 ### 參考資料
 - [blairlee227](https://github.com/blairlee227/taiwan-reservoir)
 - [TaiwanReservoirAPI](https://github.com/chihsuan/TaiwanReservoirAPI)
 - [reservoir-visual](https://github.com/chihsuan/reservoir-visual)
+
+
