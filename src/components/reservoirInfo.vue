@@ -4,7 +4,7 @@
     <div class="flex justify-center">
       <div class="flex-initial xl:mr-10 lg:mr-5 md:mr-12 mr-5">
         <!-- water percentage chart -->
-        <img src="src/assets/image/water_icon.png">
+        <drop class="drop" :percentage="50" />
       </div>
       <div
           class="
@@ -48,8 +48,10 @@
 </template>
 
 <script>
+import Drop from "../components/drop";
 export default {
-  name: "reservoirInfo.vue"
+  name: "reservoirInfo.vue",
+  components: {Drop}
 }
 </script>
 
