@@ -29,5 +29,5 @@
 - [blairlee227](https://github.com/blairlee227/taiwan-reservoir)
 - [TaiwanReservoirAPI](https://github.com/chihsuan/TaiwanReservoirAPI)
 - [reservoir-visual](https://github.com/chihsuan/reservoir-visual)
-
-
+- [防災資訊服務網，水庫水情](https://fhy.wra.gov.tw/fhy/Monitor/Reservoir)
+- [蘋果日報，水庫新聞](https://tw.appledaily.com/life/20210625/K5PGN56YARD3FD7UOHRXUQT45M/)
