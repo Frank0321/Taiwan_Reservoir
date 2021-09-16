@@ -37,10 +37,12 @@
           <p class="mt-2 text-brown">
             今日出水量：300 萬立方公尺
           </p>
+          <div>
+            <p class="mt-2 text-brown">==========================</p>
+            <p class="mt-2 text-brown">更新時間：</p>
+          </div>
         </div>
-        <div>
-          <p class="mt-2 text-brown">更新時間：</p>
-        </div>
+
       </div>
     </div>
   </div>
@@ -56,7 +58,7 @@ export default {
 
 <style scoped>
 .drop{
+  float: left;
   width: 150px;
-
 }
 </style>
