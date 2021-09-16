@@ -39,17 +39,15 @@
               :height="waterValue"
           >
             <!-- 0~137 -->
-            <animate
-              attributeName="height"
-              from="137"
-              :to="waterValue"
-              dur="0.6s"
-              fill="freeze"
-            />
+
           </rect>
         </g>
       </g>
     </svg>
+    <p class="value-text">
+      <span class="value">{{percentage}}</span>
+      <span class="percentage">%</span>
+    </p>
   </div>
 </template>
 
@@ -79,5 +77,14 @@ export default {
 </script>
 
 <style scoped>
-
+.bg {
+  fill: #42b983;
+}
+.water {
+  clip-path: url(#clip-path);
+  -webkit-clip-path: url(#clip-path) !important;
+}
+.value-text {
+  /*設定圖片的位置*/
+}
 </style>
