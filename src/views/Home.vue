@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-
+    <h1> 台灣水庫即時水情狀況 </h1>
   </div>
 </template>
 

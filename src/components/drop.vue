@@ -69,10 +69,10 @@ export default {
       let val = this.percentage.toFixed(1);
       return val;
     },
-    //
+    //顯示圖形的百分比
     waterValue(){
-      let waterVaul = 137 - (this.rate * 137) /100;
-      return waterVaul;
+      let waterValue = 137 - (this.rate * 137) /100;
+      return waterValue;
     }
   }
 }

@@ -1,10 +1,9 @@
 <template>
   <div>
-    一個水庫的資訊
     <div class="flex justify-center">
       <div class="flex-initial xl:mr-10 lg:mr-5 md:mr-12 mr-5">
         <!-- water percentage chart -->
-        <drop class="drop" :percentage="50" />
+        <drop class="drop" :percentage="100" />
       </div>
       <div
           class="
@@ -14,7 +13,7 @@
       >
         <div class="mb-3">
           <div class="text-brown text-2xl font-bold mb-3">
-
+              我是水庫
           </div>
           <span
               class="
@@ -27,16 +26,16 @@
               align-middle
             "
           >
-
+              台灣省
           </span>
           <p class="mt-5 text-brown">
-            有效蓄水量：萬立方公尺
+            有效蓄水量：100 萬立方公尺
           </p>
           <p class="mt-2 text-brown">
-            今日進水量：萬立方公尺
+            今日進水量：200 萬立方公尺
           </p>
           <p class="mt-2 text-brown">
-            今日出水量：萬立方公尺
+            今日出水量：300 萬立方公尺
           </p>
         </div>
         <div>
@@ -56,5 +55,8 @@ export default {
 </script>
 
 <style scoped>
+.drop{
+  width: 150px;
 
+}
 </style>
