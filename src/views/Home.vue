@@ -1,22 +1,35 @@
 <template>
   <div class="home">
     <h1> 台灣水庫即時水情狀況 </h1>
+    <td width="600" height="400">
+      <reservoir-info />
+    </td>
+    <td width="600" height="400">
+      <reservoir-info />
+    </td>
+    <td width="600" height="400">
+      <reservoir-info />
+    </td>
+    <td width="600" height="400">
+      <reservoir-info />
+    </td>
   </div>
 </template>
 
 <script>
 
 import axios from "axios"
-// import axios from "../plugins/axios";
+import ReservoirInfo from "../components/reservoirInfo";
+
 export default {
   name: 'Home',
   components: {
+    ReservoirInfo
 
   },
   data(){
     return{
-      rowData:[],
-      roeDstsOne:""
+      rowData:[]
     }
   },
   mounted() {
@@ -36,7 +49,6 @@ export default {
       axios.get(`https://www.taiwanstat.com/waters/latest`)
       .then(function (response) {
         console.log("success");
-        console.log("response", response.data[0]);
         self.rowData = response.data[0];
         console.log("self", self.rowData);
       });
