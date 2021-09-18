@@ -16,8 +16,7 @@ export default {
   data(){
     return{
       rowData:[],
-      DataOne: {},
-
+      roeDstsOne:""
     }
   },
   mounted() {
@@ -33,12 +32,14 @@ export default {
       //   //有讀出數據了
       //   console.log(response.data[0]);
       // })
-
+      let self = this;
       axios.get(`https://www.taiwanstat.com/waters/latest`)
       .then(function (response) {
         console.log("success");
         console.log("response", response.data[0]);
-      })
+        self.rowData = response.data[0];
+        console.log("self", self.rowData);
+      });
     }
   }
 }
