@@ -13,7 +13,7 @@ const routes = [
   {
     path: '/reservoirInfo',
     name: 'ReservoirInfo',
-    component: () => import('../components/reservoirInfo.vue')
+    component: () => import('../components/reservoirInfoDemo.vue')
   },
   {
     path: '/drop',
