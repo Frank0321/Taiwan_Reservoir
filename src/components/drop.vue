@@ -70,6 +70,10 @@ export default {
     //顯示圖形的百分比
     waterValue(){
       let waterValue = 137 - (this.rate * 137) /100;
+      if (waterValue < 0){
+        waterValue = 0;
+      }
+      console.log(waterValue);
       return waterValue;
     }
   }

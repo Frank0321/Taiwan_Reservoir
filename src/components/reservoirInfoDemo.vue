@@ -3,7 +3,7 @@
     <div class="flex justify-center">
       <div class="flex-initial xl:mr-10 lg:mr-5 md:mr-12 mr-5">
         <!-- water percentage chart -->
-        <drop class="drop" :percentage= 30 />
+        <drop class="drop" :percentage= 105 />
       </div>
       <div
           class="
