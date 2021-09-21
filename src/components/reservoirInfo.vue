@@ -12,7 +12,7 @@
         "
       >
         <div class="mb-3">
-          <div class="text-brown text-2xl font-bold mb-3">
+          <div class="text-brown title">
             {{ childRowData.name }}
           </div>
           <span
@@ -63,8 +63,15 @@ export default {
 .drop{
   float: left;
   width: 150px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 .text-brown {
   font-size: 20px;
+}
+.title {
+  font-size: 30px;
+  color: darkred;
+  font-weight: bolder;
 }
 </style>
