@@ -10,7 +10,7 @@
         viewBox="0 0 97.1 139.4"
         style="enable-background: new 0 0 97.1 139.4"
         xml:space="preserve"
-        :class="value < 25 ? 'danger' : value < 50 ? 'warning' : 'default'"
+        :class="rate < 25 ? 'danger' : rate < 50 ? 'warning' : 'default'"
     >
       <path
           class="bg"
@@ -45,7 +45,7 @@
       </g>
     </svg>
     <p class="value-text">
-      <span class="value">{{percentage}}</span>
+      <span class="value">{{rate}}</span>
       <span class="percentage">%</span>
     </p>
   </div>
@@ -80,11 +80,23 @@ export default {
 .bg {
   fill: #42b983;
 }
-.water {
+.water{
   clip-path: url(#clip-path);
-  -webkit-clip-path: url(#clip-path) !important;
+  fill: aquamarine;
 }
+.warning path{
+  fill: coral;
+}
+.danger path{
+  fill: brown;
+}
+
 .value-text {
   /*設定圖片的位置*/
+  /*position: absolute;*/
+  /*top: 53%;*/
+  /*left: 50%;*/
+  /*transform: translateX(-50%);*/
+  /*white-space: nowrap;*/
 }
 </style>
