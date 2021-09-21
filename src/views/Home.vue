@@ -61,13 +61,13 @@ export default {
 <style scoped>
 .list{
   background-color: transparent;
-  display:block;
   width: calc(70% / 2 - 20px);
   margin-right: 10px;
   border: 1px solid #b4ffe1;
   box-shadow: 0 0 5px #cfcfcf;
   margin-bottom: 0.6em;
   border-radius: 15px;
+  display : inline-block;
 }
 
 
