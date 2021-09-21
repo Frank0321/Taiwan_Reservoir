@@ -13,7 +13,6 @@
 <!--    </div>-->
     <div class="list" v-for="item in rowData" :key="item.id">
       <ReservoirInfo :child-row-data="item" />
-      {{item.id}}
     </div>
   </div>
 </template>
