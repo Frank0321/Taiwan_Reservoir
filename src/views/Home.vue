@@ -11,8 +11,9 @@
 <!--      <p>今日出水量 : {{item.daliyOverflow}}</p>-->
 <!--      <p>更新時間 : {{item.updateAt}} </p>-->
 <!--    </div>-->
-    <div class="list" v-for="item in rowData" :key="item">
+    <div class="list" v-for="item in rowData" :key="item.id">
       <ReservoirInfo :child-row-data="item" />
+      {{item.id}}
     </div>
   </div>
 </template>

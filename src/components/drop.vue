@@ -73,7 +73,7 @@ export default {
       if (waterValue < 0){
         waterValue = 0;
       }
-      console.log(waterValue);
+      // console.log(waterValue);
       return waterValue;
     }
   }
