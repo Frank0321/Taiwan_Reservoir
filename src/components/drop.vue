@@ -77,20 +77,31 @@ export default {
 </script>
 
 <style scoped>
-.bg {
+
+.default .bg {
   fill: #42b983;
 }
-.water{
+.default .water{
   clip-path: url(#clip-path);
-  fill: aquamarine;
+  fill: #b4ffe1;
 }
-.warning path{
+/*------------*/
+.warning .bg{
   fill: coral;
 }
-.danger path{
-  fill: brown;
+.warning .water{
+  clip-path: url(#clip-path);
+  fill: #ffe1a8;
 }
-
+/*------------*/
+.danger .bg{
+  fill: red;
+}
+.danger .water{
+  clip-path: url(#clip-path);
+  fill: #ff97a9;
+}
+/*------------*/
 .value-text {
   /*設定圖片的位置*/
   /*position: absolute;*/
