@@ -11,10 +11,8 @@
 <!--      <p>今日出水量 : {{item.daliyOverflow}}</p>-->
 <!--      <p>更新時間 : {{item.updateAt}} </p>-->
 <!--    </div>-->
-    <div v-for="item in rowData" :key="item">
-      <td width="600" height="400">
-        <ReservoirInfo :child-row-data="item" />
-      </td>
+    <div class="list" v-for="item in rowData" :key="item">
+      <ReservoirInfo :child-row-data="item" />
     </div>
   </div>
 </template>
@@ -59,3 +57,18 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.list{
+  background-color: transparent;
+  display:block;
+  width: calc(70% / 2 - 20px);
+  margin-right: 10px;
+  border: 1px solid #b4ffe1;
+  box-shadow: 0 0 5px #cfcfcf;
+  margin-bottom: 0.6em;
+  border-radius: 15px;
+}
+
+
+</style>

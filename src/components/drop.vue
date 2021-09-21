@@ -105,9 +105,18 @@ export default {
 .value-text {
   /*設定圖片的位置*/
   /*position: absolute;*/
-  /*top: 53%;*/
-  /*left: 50%;*/
-  /*transform: translateX(-50%);*/
-  /*white-space: nowrap;*/
+  top: 10%;
+  left: 50%;
+  transform: translateX(-10%);
+  transform: translateY(-50%);
+  align-self:center;
 }
+.value-text .value{
+  font-size: 55px;
+}
+.value-text .percentage{
+  font-size: 55px;
+}
+
+
 </style>

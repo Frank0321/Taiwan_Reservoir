@@ -64,4 +64,7 @@ export default {
   float: left;
   width: 150px;
 }
+.text-brown {
+  font-size: 20px;
+}
 </style>
