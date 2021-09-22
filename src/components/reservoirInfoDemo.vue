@@ -3,6 +3,7 @@
     <div class="flex justify-center">
       <div class="flex-initial xl:mr-10 lg:mr-5 md:mr-12 mr-5">
         <!-- water percentage chart -->
+<!--        TODO : 將 v-mode 的值帶到 percentage 中-->
         <drop class="drop" :percentage="105" />
       </div>
       <div
@@ -29,7 +30,7 @@
           <p class="mt-5 text-brown">
             有效蓄水量：{{ isMoney(12345678) }} 萬立方公尺
           </p>
-          <p class="mt-2 text-brown">今日進水量：456 萬立方公尺</p>
+          <p class="mt-2 text-brown">今日進水量：{{asMonetaryFormat(456456.00)}} 萬立方公尺</p>
           <p class="mt-2 text-brown">今日出水量：789 萬立方公尺</p>
           <div>
             <p class="mt-2 text-brown">==========================</p>
@@ -51,6 +52,15 @@ export default {
       if (typeof val === "number") {
         return val.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
+    },
+    //參考 reinsurance-ui 的寫法
+    //TODO : 將他拉出來到 utils 的檔案夾中，當作共用的方法
+    asMonetaryFormat(value) {
+      if (typeof value == "number") {
+        let result = new Intl.NumberFormat("zh-TW").format(value);
+        return result;
+      }
+      return value;
     },
   },
 };

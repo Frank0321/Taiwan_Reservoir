@@ -11,6 +11,7 @@
     <!--      <p>今日出水量 : {{item.daliyOverflow}}</p>-->
     <!--      <p>更新時間 : {{item.updateAt}} </p>-->
     <!--    </div>-->
+<!--    TODO : 新增篩選的功能 : 供水區域、水庫名稱 -->
     <div class="list" v-for="item in rowData" :key="item.id">
       <ReservoirInfo :child-row-data="item" />
     </div>
@@ -45,8 +46,8 @@ export default {
       //   console.log(response.data[0]);
       // })
 
-      var dbjson = require("../static/reservoirArea.json");
-      console.log("dbjson", dbjson.areaData);
+      let DBjson = require("../static/reservoirArea.json");
+      console.log("DBjson", DBjson.areaData);
 
       let self = this;
       axios
@@ -56,6 +57,7 @@ export default {
           self.rowData = response.data[0];
           console.log("self", self.rowData);
         });
+      //TODO : 將外部資料與內部資料組合再一起
     },
   },
 };
