@@ -116,10 +116,10 @@ export default {
   align-self:center;
 }
 .value-text .value{
-  font-size: 55px;
+  font-size: 50px;
 }
 .value-text .percentage{
-  font-size: 55px;
+  font-size: 50px;
 }
 
 

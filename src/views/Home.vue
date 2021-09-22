@@ -66,7 +66,7 @@ export default {
 <style scoped>
 .list{
   background-color: transparent;
-  width: calc(70% / 2 - 20px);
+  width: calc(80% / 2 - 10px);
   margin-right: 10px;
   border: 1px solid #b4ffe1;
   box-shadow: 0 0 5px #cfcfcf;

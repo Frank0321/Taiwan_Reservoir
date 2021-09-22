@@ -67,7 +67,7 @@ export default {
   margin-top: 20px;
 }
 .text-brown {
-  font-size: 20px;
+  font-size: 17px;
 }
 .title {
   font-size: 30px;
