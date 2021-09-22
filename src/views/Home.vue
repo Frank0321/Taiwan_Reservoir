@@ -46,6 +46,10 @@ export default {
       //   //有讀出數據了
       //   console.log(response.data[0]);
       // })
+
+      var dbjson = require("../static/reservoirArea.json");
+      console.log("dbjson", dbjson.areaData);
+
       let self = this;
       axios.get(`https://www.taiwanstat.com/waters/latest`)
       .then(function (response) {
@@ -53,6 +57,7 @@ export default {
         self.rowData = response.data[0];
         console.log("self", self.rowData);
       });
+
     }
   }
 }
