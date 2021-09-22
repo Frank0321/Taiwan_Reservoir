@@ -3,20 +3,18 @@
     <div class="flex justify-center">
       <div class="flex-initial xl:mr-10 lg:mr-5 md:mr-12 mr-5">
         <!-- water percentage chart -->
-        <drop class="drop" :percentage= 105 />
+        <drop class="drop" :percentage="105" />
       </div>
       <div
-          class="
+        class="
           flex-initial
           divide-y-2 divide-brown divide-dotted divide-opacity-50
         "
       >
         <div class="mb-3">
-          <div class="text-brown title">
-            我是水庫
-          </div>
+          <div class="text-brown title">我是水庫</div>
           <span
-              class="
+            class="
               bg-grass
               text-white text-md
               rounded-md
@@ -26,23 +24,18 @@
               align-middle
             "
           >
-              台灣省
+            台灣省
           </span>
           <p class="mt-5 text-brown">
-            有效蓄水量：123 萬立方公尺
+            有效蓄水量：{{ isMoney(12345678) }} 萬立方公尺
           </p>
-          <p class="mt-2 text-brown">
-            今日進水量：456 萬立方公尺
-          </p>
-          <p class="mt-2 text-brown">
-            今日出水量：789 萬立方公尺
-          </p>
+          <p class="mt-2 text-brown">今日進水量：456 萬立方公尺</p>
+          <p class="mt-2 text-brown">今日出水量：789 萬立方公尺</p>
           <div>
             <p class="mt-2 text-brown">==========================</p>
-            <p class="mt-2 text-brown">更新時間：2021-09-20(22時) </p>
+            <p class="mt-2 text-brown">更新時間：2021-09-20(22時)</p>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -52,13 +45,19 @@
 import Drop from "../components/drop";
 export default {
   name: "reservoirInfo.vue",
-  components: {Drop},
-
-}
+  components: { Drop },
+  methods: {
+    isMoney(val) {
+      if (typeof val === "number") {
+        return val.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
-.drop{
+.drop {
   float: left;
   width: 150px;
   margin-left: 20px;

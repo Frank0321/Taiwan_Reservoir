@@ -1,32 +1,31 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 import Drop from "../components/drop";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: () =>import('../views/Home.vue')
+    path: "/",
+    name: "Home",
+    component: () => import("../views/Home.vue"),
   },
   {
-    path: '/reservoirInfo',
-    name: 'ReservoirInfo',
-    component: () => import('../components/reservoirInfoDemo.vue')
+    path: "/reservoirInfo",
+    name: "ReservoirInfo",
+    component: () => import("../components/reservoirInfoDemo.vue"),
   },
   {
-    path: '/drop',
-    name: 'Drop',
-    component: Drop
-  }
-
-]
+    path: "/drop",
+    name: "Drop",
+    component: Drop,
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
