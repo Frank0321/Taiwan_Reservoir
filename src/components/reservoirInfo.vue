@@ -26,16 +26,16 @@
               align-middle
             "
           >
-              台灣省
+<!--              供水區域 :-->
           </span>
           <p class="mt-5 text-brown">
-            有效蓄水量：{{ childRowData.baseAvailable }} 萬立方公尺
+            有效蓄水量： {{asMonetaryFormat(childRowData.baseAvailable)}} 萬立方公尺
           </p>
           <p class="mt-2 text-brown">
-            今日進水量：{{ childRowData.daliyInflow }} 萬立方公尺
+            今日進水量：{{ asMonetaryFormat(childRowData.daliyInflow) }} 萬立方公尺
           </p>
           <p class="mt-2 text-brown">
-            今日出水量：{{ childRowData.daliyOverflow }} 萬立方公尺
+            今日出水量：{{ asMonetaryFormat(childRowData.daliyOverflow) }} 萬立方公尺
           </p>
           <div>
             <p class="mt-2 text-brown">==========================</p>
@@ -55,6 +55,16 @@ export default {
   components: {Drop},
   props: {
     childRowData:{}
+  },
+  methods:{
+    asMonetaryFormat(value) {
+      value = parseFloat(value);
+      if (typeof value == "number") {
+        let result = new Intl.NumberFormat("zh-TW").format(value);
+        return result;
+      }
+      return value;
+    },
   }
 }
 </script>
