@@ -73,8 +73,8 @@ export default {
 .drop{
   float: left;
   width: 150px;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-left: 17px;
+  margin-top: 17px;
 }
 .text-brown {
   font-size: 17px;
@@ -85,27 +85,32 @@ export default {
   font-weight: bolder;
 }
 
-@media screen and (max-width: 1200px){
-  .lg:mr-5 {
-    width: 150px;
-  }
-}
-
-@media screen and (max-width: 1000px){
-  .md:mr-12 {
-    width: 100px;
-  }
+/*TODO : 每次需要撰寫的 class 太多，是否可以簡化*/
+@media screen and (max-width: 1355px){
   .drop{
     float: left;
     width: 100px;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 17px;
+    margin-top: 17px;
+  }
+  .value-text .value {
+    font-size: 30px;
+  }
+  .value-text .percentage {
+    font-size: 30px;
+  }
+  .text-brown {
+    font-size: 17px;
+  }
+  .title {
+    font-size: 25px;
+    color: darkred;
+    font-weight: bolder;
   }
 }
 
-@media screen and (max-width: 500px){
-  .sm:mr-5 {
-    width: 70px;
-  }
+
+@media screen and (max-width: 700px){
+
 }
 </style>
