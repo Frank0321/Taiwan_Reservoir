@@ -84,4 +84,28 @@ export default {
   color: darkred;
   font-weight: bolder;
 }
+
+@media screen and (max-width: 1200px){
+  .lg:mr-5 {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .md:mr-12 {
+    width: 100px;
+  }
+  .drop{
+    float: left;
+    width: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .sm:mr-5 {
+    width: 70px;
+  }
+}
 </style>

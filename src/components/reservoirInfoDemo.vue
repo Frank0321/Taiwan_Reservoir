@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex justify-center">
-      <div class="flex-initial xl:mr-10 lg:mr-5 md:mr-12 mr-5">
+      <div class="flex-initial xl:mr-10 lg:mr-5 md:mr-12 sm:mr-5">
         <!-- water percentage chart -->
 <!--        TODO : 將 v-mode 的值帶到 percentage 中-->
         <drop class="drop" :percentage="105" />
@@ -80,5 +80,22 @@ export default {
   font-size: 30px;
   color: darkred;
   font-weight: bolder;
+}
+@media screen and (max-width: 1200px){
+  .lg:mr-5 {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 700px){
+  .md:mr-12 {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .sm:mr-5 {
+    width: 70px;
+  }
 }
 </style>

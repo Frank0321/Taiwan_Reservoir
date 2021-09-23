@@ -1,17 +1,16 @@
 <template>
   <div class="home">
-    <h1>台灣水庫即時水情狀況</h1>
-    <!--    <td width="600" height="400">-->
-    <!--      <reservoir-info />-->
-    <!--    </td>-->
-    <!--    <div v-for="item in rowData" :key="item">-->
-    <!--      <p>水庫名稱 : {{item.name}} </p>-->
-    <!--      <p>有效蓄水量 : {{item.baseAvailable}}</p>-->
-    <!--      <p>今日進水量 : {{item.daliyInflow}}</p>-->
-    <!--      <p>今日出水量 : {{item.daliyOverflow}}</p>-->
-    <!--      <p>更新時間 : {{item.updateAt}} </p>-->
-    <!--    </div>-->
-<!--    TODO : 新增篩選的功能 : 供水區域、水庫名稱 -->
+    <h1> 台灣水庫即時水情狀況 </h1>
+<!--    <td width="600" height="400">-->
+<!--      <reservoir-info />-->
+<!--    </td>-->
+<!--    <div v-for="item in rowData" :key="item">-->
+<!--      <p>水庫名稱 : {{item.name}} </p>-->
+<!--      <p>有效蓄水量 : {{item.baseAvailable}}</p>-->
+<!--      <p>今日進水量 : {{item.daliyInflow}}</p>-->
+<!--      <p>今日出水量 : {{item.daliyOverflow}}</p>-->
+<!--      <p>更新時間 : {{item.updateAt}} </p>-->
+<!--    </div>-->
     <div class="list" v-for="item in rowData" :key="item.id">
       <ReservoirInfo :child-row-data="item" />
     </div>
@@ -19,25 +18,27 @@
 </template>
 
 <script>
-import axios from "axios";
+
+import axios from "axios"
 import ReservoirInfo from "../components/reservoirInfo";
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    ReservoirInfo,
+    ReservoirInfo
+
   },
-  data() {
-    return {
-      rowData: [],
-    };
+  data(){
+    return{
+      rowData:[]
+    }
   },
   mounted() {
     this.fetchData();
   },
 
-  methods: {
-    fetchData() {
+  methods:{
+    fetchData(){
       // fetch(`https://www.taiwanstat.com/waters/latest`)
       // .then(function (response) {
       //   console.log("success");
@@ -46,25 +47,24 @@ export default {
       //   console.log(response.data[0]);
       // })
 
-      let DBjson = require("../static/reservoirArea.json");
-      console.log("DBjson", DBjson.areaData);
+      var dbjson = require("../static/reservoirArea.json");
+      console.log("dbjson", dbjson.areaData);
 
       let self = this;
-      axios
-        .get(`https://www.taiwanstat.com/waters/latest`)
-        .then(function (response) {
-          console.log("success");
-          self.rowData = response.data[0];
-          console.log("self", self.rowData);
-        });
-      //TODO : 將外部資料與內部資料組合再一起
-    },
-  },
-};
+      axios.get(`https://www.taiwanstat.com/waters/latest`)
+      .then(function (response) {
+        console.log("success");
+        self.rowData = response.data[0];
+        console.log("self", self.rowData);
+      });
+
+    }
+  }
+}
 </script>
 
 <style scoped>
-.list {
+.list{
   background-color: transparent;
   width: calc(80% / 2 - 10px);
   margin-right: 10px;
@@ -72,6 +72,8 @@ export default {
   box-shadow: 0 0 5px #cfcfcf;
   margin-bottom: 0.6em;
   border-radius: 15px;
-  display: inline-block;
+  display : inline-block;
 }
+
+
 </style>
