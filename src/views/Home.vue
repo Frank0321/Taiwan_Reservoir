@@ -67,10 +67,10 @@ export default {
 .list{
   background-color: transparent;
   width: 600px;
-  margin-right: 10px;
+  margin-right: 2em;
   border: 1px solid #b4ffe1;
-  box-shadow: 0 0 5px #cfcfcf;
-  margin-bottom: 0.6em;
+  box-shadow: 0 0 10px #cfcfcf;
+  margin-bottom: 2em;
   border-radius: 15px;
   display : inline-block;
 }
