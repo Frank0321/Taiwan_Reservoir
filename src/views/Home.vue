@@ -3,6 +3,7 @@
     <div class="list" v-for="item in rowData" :key="item.id">
       <ReservoirInfo :child-row-data="item" />
     </div>
+<!--    TODO : 製作 footer 的樣式，並拉出去做成一個 component-->
   </div>
 </template>
 
