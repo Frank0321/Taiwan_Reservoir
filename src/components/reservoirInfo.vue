@@ -25,8 +25,11 @@
               px-2
               align-middle
             "
+              v-for="area in childRowData.area"
+              :key="area"
           >
-<!--              供水區域 :-->
+<!--            地區的資料 是一個 array，所以用 v-for 將資料讀出來-->
+              {{ area }}
           </span>
           <p class="mt-5 text-brown">
             有效蓄水量： {{asMonetaryFormat(childRowData.baseAvailable)}} 萬立方公尺
@@ -84,8 +87,16 @@ export default {
   color: darkred;
   font-weight: bolder;
 }
+.bg-grass {
+  --tw-bg-opacity: 1;
+  background-color: rgba(134,183,27,var(--tw-bg-opacity));
+  margin-right: .5rem;
+  color: white;
+  font-size: 17px;
+}
 
 /*TODO : 每次需要撰寫的 class 太多，是否可以簡化*/
+/*TODO : 將需要相同設計的樣式，使用類似的 class 命名，一個標籤可以有多個 class，用空白隔開*/
 @media screen and (max-width: 1355px){
   .drop{
     float: left;

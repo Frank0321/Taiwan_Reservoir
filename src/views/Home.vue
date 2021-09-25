@@ -38,8 +38,8 @@ export default {
         console.log("self", self.rowData);
       });
        await this.loadingLocalData();
-       var a = await this.merge(self.dbjsonArr, self.rowData, "id");
-       console.log("a", a);
+
+      self.rowData = await this.joinData(self.dbjsonArr, self.rowData);
     },
 
     loadingLocalData(){
@@ -48,8 +48,17 @@ export default {
       console.log('dbjoin',this.dbjsonArr);
     },
     merge(a, b, prop){
-      var reduced = Object.values(a).filter(aitem => !b.find(bitem => aitem[prop] === bitem[prop]).label)
+      var reduced = a.filter(aitem => !b.find(bitem => aitem[prop] === bitem[prop]))
       return reduced.concat(b);
+    },
+    joinData(dbjsonArr, rowData){
+      // dbjsonArr 的資料，用 dbjsonArr[0] 可以讀出
+      // aArray 的資料要用 水庫名字去讀 aArray["仁義潭水庫"]
+      for (let i = 0; i < Object.keys(rowData).length; i++) {
+        //將兩個 object 組合再一起
+        rowData[dbjsonArr[i]["name"]] = {...dbjsonArr[i], ...rowData[dbjsonArr[i]["name"]]};
+      }
+      return rowData;
     }
   }
 }
