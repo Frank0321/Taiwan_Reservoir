@@ -20,7 +20,8 @@ export default {
   },
   data(){
     return{
-      rowData:[]
+      rowData:[],
+      dbjsonArr:[],
     }
   },
   mounted() {
@@ -28,26 +29,27 @@ export default {
   },
 
   methods:{
-    fetchData(){
-      // fetch(`https://www.taiwanstat.com/waters/latest`)
-      // .then(function (response) {
-      //   console.log("success");
-      //   console.log("response.json", response.json());
-      //   //有讀出數據了
-      //   console.log(response.data[0]);
-      // })
-
-      var dbjson = require("../static/reservoirArea.json");
-      console.log("dbjson", dbjson.areaData);
-
+    async fetchData(){
       let self = this;
-      axios.get(`https://www.taiwanstat.com/waters/latest`)
+       await axios.get(`https://www.taiwanstat.com/waters/latest`)
       .then(function (response) {
         console.log("success");
         self.rowData = response.data[0];
         console.log("self", self.rowData);
       });
+       await this.loadingLocalData();
+       var a = await this.merge(self.dbjsonArr, self.rowData, "id");
+       console.log("a", a);
+    },
 
+    loadingLocalData(){
+      var res = require("../static/reservoirArea.json").areaData;
+      this.dbjsonArr = res;
+      console.log('dbjoin',this.dbjsonArr);
+    },
+    merge(a, b, prop){
+      var reduced = Object.values(a).filter(aitem => !b.find(bitem => aitem[prop] === bitem[prop]).label)
+      return reduced.concat(b);
     }
   }
 }
