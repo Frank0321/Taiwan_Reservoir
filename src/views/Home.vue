@@ -57,6 +57,7 @@ export default {
       for (let i = 0; i < Object.keys(rowData).length; i++) {
         //將兩個 object 組合再一起
         rowData[dbjsonArr[i]["name"]] = {...dbjsonArr[i], ...rowData[dbjsonArr[i]["name"]]};
+        rowData[dbjsonArr[i]["name"]]["ratio"] = rowData[dbjsonArr[i]["name"]]["daliyNetflow"] / rowData[dbjsonArr[i]["name"]]["baseAvailable"] * 100
       }
       return rowData;
     }
@@ -68,6 +69,7 @@ export default {
 .list{
   background-color: transparent;
   width: 600px;
+  height: 280px;
   margin-right: 2em;
   border: 1px solid #b4ffe1;
   box-shadow: 0 0 10px #cfcfcf;
