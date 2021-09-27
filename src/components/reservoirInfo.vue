@@ -67,7 +67,7 @@ export default {
       if (val > 0){
         val = "上升了 " + val + "%"
       }else if (val < 0){
-        val = "下降了 " + val + "%"
+        val = "下降了 " + val * (-1) + "%"
       }else {
         val = "放心，沒有變化喔 !"
       }
