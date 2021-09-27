@@ -34,3 +34,4 @@
 - [reservoir-visual](https://github.com/chihsuan/reservoir-visual)
 - [防災資訊服務網，水庫水情](https://fhy.wra.gov.tw/fhy/Monitor/Reservoir)
 - [蘋果日報，水庫新聞](https://tw.appledaily.com/life/20210625/K5PGN56YARD3FD7UOHRXUQT45M/)
+- [其他人的範例](https://github.com/techMedMau/vue_waterStatus)
