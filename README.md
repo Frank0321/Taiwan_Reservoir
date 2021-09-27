@@ -24,6 +24,9 @@
 - 用 chart(水滴)，組成一個與reservoirInfo(水庫資訊)組合成一個components
   - reservoirInfo(父) <-> chart(子)
 
+### 完成品
+- https://frank0321.github.io/taiwan_reservoir/
+
 
 ### 參考資料
 - [blairlee227](https://github.com/blairlee227/taiwan-reservoir)
