@@ -114,9 +114,9 @@ export default {
   align-self: center;
 }
 .value-text .value {
-  font-size: 50px;
+  font-size: 40px;
 }
 .value-text .percentage {
-  font-size: 50px;
+  font-size: 40px;
 }
 </style>

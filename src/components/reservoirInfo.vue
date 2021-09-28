@@ -16,27 +16,24 @@
           <div class="text-brown title">
             {{ childRowData.name }}
           </div>
-          <p></p>
+          <span></span>
           <span
-              class="
-              bg-grass
-              text-brown
-            "
+              class="bg-grass"
               v-for="area in childRowData.area"
               :key="area"
           >
 <!--            地區的資料 是一個 array，所以用 v-for 將資料讀出來-->
               {{ area }}
           </span>
-          <p class="mt-5 text-brown">
+          <p class="text-brown">
             有效蓄水量： {{asMonetaryFormat(childRowData.baseAvailable)}} 萬立方公尺
           </p>
-          <p class="mt-2 text-brown">
+          <p class="text-brown">
             今日水量變化：{{ showRatio(childRowData.ratio) }}
           </p>
           <div>
-            <span class="mt-2 text-brown">==========================</span>
-            <p class="mt-2 text-brown">更新時間：{{ childRowData.updateAt }}</p>
+            <span class="text-brown">==========================</span>
+            <p class="text-brown">更新時間：{{ childRowData.updateAt }}</p>
           </div>
         </div>
 
@@ -86,7 +83,8 @@ export default {
   margin-top: 17px;
 }
 .text-brown {
-  font-size: 17px;
+  margin-top: 17px;
+  font-size: 20px;
 }
 .title {
   font-size: 30px;
@@ -98,11 +96,10 @@ export default {
   height: 30px;
   padding: 5px;
   text-align: center;
-  background-color: rgb(41, 105, 176, 0.7);
+  background-color: rgba(41, 105, 176, 0.7);
   border-radius: 4px;
   color: white;
   margin-left: 10px;
-
 }
 
 /*TODO : 每次需要撰寫的 class 太多，是否可以簡化*/
