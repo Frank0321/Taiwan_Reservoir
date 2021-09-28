@@ -116,7 +116,7 @@
       "name": "曾文水庫",
       "id": "reservoir14",
       "area": ["嘉義", "台南"],
-      "mainArea": "SOUTHERN",
+      "mainArea": "southern",
       "sort":16
     },
     {

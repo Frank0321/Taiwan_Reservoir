@@ -16,7 +16,7 @@
 <!--        </option>-->
 <!--      </select>-->
 <!--    </h2>-->
-    <div class="list" v-for="item in rowData" :key="item.id">
+    <div class="list" v-for="item in searchData" :key="item.id">
       <ReservoirInfo :child-row-data="item" />
     </div>
 <!--    TODO : 製作 footer 的樣式，並拉出去做成一個 component-->
@@ -85,6 +85,7 @@ export default {
       });
        await this.loadingLocalData();
       self.rowData = await this.joinData(self.dbjsonArr, self.rowData);
+      self.searchData = self.rowData;
     },
 
     loadingLocalData(){
@@ -128,14 +129,13 @@ export default {
     },
     search(area){
       console.log(area);
-      // for (var item in this.rowData){
-      //
-      // }
-      // this.searchData = this.rowData.filter((item) => {return this.rowData[item]["mainArea"] = area});
-      // console.log(this.searchData);
-      // for (var item in this.rowData){
-      //   console.log("item", this.rowData[item]["mainArea"]);
-      // }
+      this.searchData = [];
+      for (var item in this.rowData){
+        if (this.rowData[item]["mainArea"] == area){
+          this.searchData.push(this.rowData[item]);
+        }
+      }
+      console.log("searchData", this.searchData);
     }
   }
 }
@@ -152,11 +152,25 @@ export default {
   margin-bottom: 2em;
   border-radius: 15px;
   display : inline-block;
+
 }
 .btn {
   font-size: 20px;
   margin-right: 2em;
   width: 90px;
+  color: black;
+  background-color: #ffa214;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn:active {
+  color: #fff;
+  background-color: #ff7106;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 </style>
