@@ -12,18 +12,15 @@
         "
       >
         <div class="mb-3">
+          <p></p>
           <div class="text-brown title">
             {{ childRowData.name }}
           </div>
+          <p></p>
           <span
               class="
               bg-grass
-              text-white text-md
-              rounded-md
-              mr-2
-              py-1
-              px-2
-              align-middle
+              text-brown
             "
               v-for="area in childRowData.area"
               :key="area"
@@ -35,13 +32,10 @@
             有效蓄水量： {{asMonetaryFormat(childRowData.baseAvailable)}} 萬立方公尺
           </p>
           <p class="mt-2 text-brown">
-            今日進水量：{{ asMonetaryFormat(childRowData.daliyInflow) }} 萬立方公尺
-          </p>
-          <p class="mt-2 text-brown">
-            今日出水量：{{ asMonetaryFormat(childRowData.daliyOverflow) }} 萬立方公尺
+            今日水量變化：{{ showRatio(childRowData.ratio) }}
           </p>
           <div>
-            <p class="mt-2 text-brown">==========================</p>
+            <span class="mt-2 text-brown">==========================</span>
             <p class="mt-2 text-brown">更新時間：{{ childRowData.updateAt }}</p>
           </div>
         </div>
@@ -68,6 +62,18 @@ export default {
       }
       return value;
     },
+    showRatio(value){
+      let val = value.toFixed(2);
+      if (val > 0){
+        val = "上升了 " + val + "%"
+      }else if (val < 0){
+        val = "下降了 " + val * (-1) + "%"
+      }else {
+        val = "放心，沒有變化喔 !"
+      }
+
+      return val;
+    }
   }
 }
 </script>
@@ -75,7 +81,7 @@ export default {
 <style scoped>
 .drop{
   float: left;
-  width: 150px;
+  width: 120px;
   margin-left: 17px;
   margin-top: 17px;
 }
@@ -88,11 +94,15 @@ export default {
   font-weight: bolder;
 }
 .bg-grass {
-  --tw-bg-opacity: 1;
-  background-color: rgba(134,183,27,var(--tw-bg-opacity));
-  margin-right: .5rem;
+  border-width: 3px;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+  background-color: rgb(41, 105, 176, 0.7);
+  border-radius: 4px;
   color: white;
-  font-size: 17px;
+  margin-left: 10px;
+
 }
 
 /*TODO : 每次需要撰寫的 class 太多，是否可以簡化*/

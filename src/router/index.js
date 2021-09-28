@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Drop from "../components/drop";
 import waterOne from "../components/waterOne";
 import waterTwo from "../components/waterTwo";
+import waterThree from "../components/waterThree";
 
 
 Vue.use(VueRouter);
@@ -32,6 +33,11 @@ const routes = [
     path: "/water/two",
     name: "waterTwo",
     component: waterTwo,
+  },
+  {
+    path: "/water/three",
+    name: "waterThree",
+    component: waterThree,
   }
 ];
 
