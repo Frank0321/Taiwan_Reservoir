@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <h2>
+      <button class="btn" v-for="area in optionListArea" :key="area.index" @click="chooseArea(area.value)"> {{area.item}}</button>
+    </h2>
 <!--    <h2>篩選條件 :-->
 <!--      <select class="choose condition">-->
 <!--        <option v-for="condition in chooseCondition" :key="condition.index">-->
@@ -34,8 +37,8 @@ export default {
   data(){
     return{
       rowData:[],
+      searchData:[],
       dbjsonArr:[],
-      searchData: [],
       chooseCondition: [
         {
           item: "地區"
@@ -77,17 +80,18 @@ export default {
       .then(function (response) {
         console.log("success");
         self.rowData = response.data[0];
-        console.log("self", self.rowData);
+        console.log("rowData", Array.from(self.rowData));
+        console.log("rowData is Array", Array.isArray(Array.from(self.rowData)));
       });
        await this.loadingLocalData();
       self.rowData = await this.joinData(self.dbjsonArr, self.rowData);
-      // console.log("optionListArea", this.optionListArea);
     },
 
     loadingLocalData(){
       var res = require("../static/reservoirArea.json").areaData;
       this.dbjsonArr = res;
-      console.log('dbjoin',this.dbjsonArr);
+      console.log('dbjson',this.dbjsonArr);
+      console.log("dbjson is Array", Array.isArray(this.dbjsonArr));
     },
     merge(a, b, prop){
       var reduced = a.filter(aitem => !b.find(bitem => aitem[prop] === bitem[prop]))
@@ -98,12 +102,41 @@ export default {
       // aArray 的資料要用 水庫名字去讀 aArray["仁義潭水庫"]
       for (let i = 0; i < Object.keys(rowData).length; i++) {
         //將兩個 object 組合再一起
+        // dbjsonArr[i] = {...dbjsonArr[i], ...rowData[dbjsonArr[i]["name"]]};
+        // dbjsonArr[i]["ratio"] = rowData[dbjsonArr[i]["name"]]["daliyNetflow"] / rowData[dbjsonArr[i]["name"]]["baseAvailable"] * 100
         rowData[dbjsonArr[i]["name"]] = {...dbjsonArr[i], ...rowData[dbjsonArr[i]["name"]]};
         rowData[dbjsonArr[i]["name"]]["ratio"] = rowData[dbjsonArr[i]["name"]]["daliyNetflow"] / rowData[dbjsonArr[i]["name"]]["baseAvailable"] * 100
       }
       return rowData;
     },
-
+    chooseArea(area){
+      console.log("area", area);
+      switch (area){
+        case "northern":
+          this.search("northern");
+          break;
+        case "central":
+          this.search("central");
+          break;
+        case "southern":
+          this.search("southern");
+          break;
+        default:
+          this.searchData = this.rowData;
+          break;
+      }
+    },
+    search(area){
+      console.log(area);
+      // for (var item in this.rowData){
+      //
+      // }
+      // this.searchData = this.rowData.filter((item) => {return this.rowData[item]["mainArea"] = area});
+      // console.log(this.searchData);
+      // for (var item in this.rowData){
+      //   console.log("item", this.rowData[item]["mainArea"]);
+      // }
+    }
   }
 }
 </script>
@@ -120,9 +153,10 @@ export default {
   border-radius: 15px;
   display : inline-block;
 }
-.choose {
+.btn {
   font-size: 20px;
   margin-right: 2em;
+  width: 90px;
 }
 
 </style>
