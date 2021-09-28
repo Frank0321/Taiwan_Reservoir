@@ -33,6 +33,7 @@
           </p>
           <p class="mt-2 text-brown">
             今日水量變化：{{ showRatio(childRowData.ratio) }}
+<!--            今日水量變化：{{ childRowData.ratio }}-->
           </p>
           <div>
             <span class="mt-2 text-brown">==========================</span>
@@ -53,7 +54,7 @@ export default {
   props: {
     childRowData:{}
   },
-  methods:{
+  methods: {
     asMonetaryFormat(value) {
       value = parseFloat(value);
       if (typeof value == "number") {
@@ -63,7 +64,7 @@ export default {
       return value;
     },
     showRatio(value){
-      let val = value.toFixed(2);
+      var val = Number(value).toFixed(2);
       if (val > 0){
         val = "上升了 " + val + "%"
       }else if (val < 0){
