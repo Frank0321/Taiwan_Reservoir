@@ -1,5 +1,18 @@
 <template>
   <div class="home">
+<!--    <h2>篩選條件 :-->
+<!--      <select class="choose condition">-->
+<!--        <option v-for="condition in chooseCondition" :key="condition.index">-->
+<!--          {{condition.item}}-->
+<!--        </option>-->
+
+<!--      </select>-->
+<!--      <select class="choose item">-->
+<!--        <option v-for="it in optionListArea" :key="it.index">-->
+<!--          {{it.item}}-->
+<!--        </option>-->
+<!--      </select>-->
+<!--    </h2>-->
     <div class="list" v-for="item in rowData" :key="item.id">
       <ReservoirInfo :child-row-data="item" />
     </div>
@@ -22,10 +35,39 @@ export default {
     return{
       rowData:[],
       dbjsonArr:[],
+      searchData: [],
+      chooseCondition: [
+        {
+          item: "地區"
+        },
+        {
+          item: "縣市"
+        }
+    ],
+      optionList: [],
+      optionListArea: [
+        {
+          item: "全部",
+          value: "total"
+        },
+        {
+          item: "北",
+          value: "northern"
+        },
+        {
+          item: "中",
+          value: "central"
+        },
+        {
+          item: "南",
+          value: "southern"
+        }
+      ]
     }
   },
   mounted() {
     this.fetchData();
+
   },
 
   methods:{
@@ -38,8 +80,8 @@ export default {
         console.log("self", self.rowData);
       });
        await this.loadingLocalData();
-
       self.rowData = await this.joinData(self.dbjsonArr, self.rowData);
+      // console.log("optionListArea", this.optionListArea);
     },
 
     loadingLocalData(){
@@ -60,7 +102,8 @@ export default {
         rowData[dbjsonArr[i]["name"]]["ratio"] = rowData[dbjsonArr[i]["name"]]["daliyNetflow"] / rowData[dbjsonArr[i]["name"]]["baseAvailable"] * 100
       }
       return rowData;
-    }
+    },
+
   }
 }
 </script>
@@ -77,6 +120,9 @@ export default {
   border-radius: 15px;
   display : inline-block;
 }
-
+.choose {
+  font-size: 20px;
+  margin-right: 2em;
+}
 
 </style>
