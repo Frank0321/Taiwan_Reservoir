@@ -43,12 +43,11 @@ export default {
     },
 
     loadingLocalData(){
-      var res = require("../static/reservoirArea.json").areaData;
-      this.dbjsonArr = res;
+      this.dbjsonArr = require("../static/reservoirArea.json").areaData;
       console.log('dbjoin',this.dbjsonArr);
     },
     merge(a, b, prop){
-      var reduced = a.filter(aitem => !b.find(bitem => aitem[prop] === bitem[prop]))
+      let reduced = a.filter(aitem => !b.find(bitem => aitem[prop] === bitem[prop]))
       return reduced.concat(b);
     },
     joinData(dbjsonArr, rowData){
