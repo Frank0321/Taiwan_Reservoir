@@ -108,21 +108,21 @@ export default {
 
 /*TODO : 每次需要撰寫的 class 太多，是否可以簡化*/
 /*TODO : 將需要相同設計的樣式，使用類似的 class 命名，一個標籤可以有多個 class，用空白隔開*/
-@media screen and (max-width: 1355px){
+@media screen and (max-width: 600px){
   .drop{
     float: left;
-    width: 100px;
+    width: 90px;
     margin-left: 17px;
     margin-top: 17px;
   }
   .value-text .value {
-    font-size: 30px;
+    font-size: 15px;
   }
   .value-text .percentage {
-    font-size: 30px;
+    font-size: 10px;
   }
   .text-brown {
-    font-size: 17px;
+    font-size: 16px;
   }
   .title {
     font-size: 25px;

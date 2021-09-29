@@ -119,4 +119,13 @@ export default {
 .value-text .percentage {
   font-size: 50px;
 }
+
+@media screen and (max-width: 600px){
+  .value-text .value {
+    font-size: 40px;
+  }
+  .value-text .percentage {
+    font-size: 40px;
+  }
+}
 </style>

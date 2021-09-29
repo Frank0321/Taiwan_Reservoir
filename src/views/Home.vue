@@ -173,4 +173,17 @@ export default {
   transform: translateY(4px);
 }
 
+@media screen and (max-width: 600px) {
+  .btn {
+    margin-right: 4.5em;
+    margin-top: 1em;
+  }
+  .list{
+    width: 450px;
+    height: 250px;
+    border: 2px solid #3b7bdb;
+    box-shadow: 0 0 10px #cfcfcf;
+  }
+}
+
 </style>
